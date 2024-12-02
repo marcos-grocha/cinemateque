@@ -21,3 +21,9 @@ pt-BR:
     create:
       success: 'Filme adicionado com sucesso.'
       failure: 'Filme não foi adicionado.'
+  actors:
+    new:
+      title: 'Novo Ator'
+    create:
+      success: 'Ator adicionado com sucesso.'
+      failure: 'Ator não foi adicionado.'

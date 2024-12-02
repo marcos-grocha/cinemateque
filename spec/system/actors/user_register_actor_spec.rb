@@ -17,7 +17,7 @@ describe 'Usuário cadastra ator' do
     within('nav') do
       click_on 'Atores'
     end
-    click_on 'Registrar Atores'
+    click_on 'Adicionar Ator'
 
     expect(page).to eq 'Vejo já isso'
   end
