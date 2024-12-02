@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_02_181909) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_02_194022) do
   create_table "actors", force: :cascade do |t|
     t.string "name"
-    t.datetime "date_of_birth"
+    t.date "date_of_birth"
     t.string "nationality"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,6 +34,14 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_181909) do
     t.string "director"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "description", null: false
+    t.integer "actor_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_roles_on_actor_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -58,5 +66,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_181909) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "roles", "actors"
   add_foreign_key "rooms", "movie_theaters"
 end

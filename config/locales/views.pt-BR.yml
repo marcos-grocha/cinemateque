@@ -16,14 +16,19 @@ pt-BR:
   movies:
     new:
       title: 'Novo Filme'
-    index: 
-      title: 'Filmes'
     create:
       success: 'Filme adicionado com sucesso.'
       failure: 'Filme não foi adicionado.'
+    index: 
+      title: 'Filmes'
   actors:
     new:
       title: 'Novo Ator'
     create:
       success: 'Ator adicionado com sucesso.'
       failure: 'Ator não foi adicionado.'
+    index:
+      title: 'Atores'
+  roles:
+    new:
+      title: 'Novo Papel'

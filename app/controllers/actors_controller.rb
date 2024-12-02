@@ -1,5 +1,4 @@
 class ActorsController < ApplicationController
-
   def index
     @actors = Actor.all
   end
@@ -9,17 +8,17 @@ class ActorsController < ApplicationController
   end
 
   def create
-    @actor = MovieTheater.new(params.require(:movie_theater).permit(:name, :city))
+    @actor = Actor.new(params.require(:actor).permit(:name, :date_of_birth, :nationality))
 
     if @actor.save
       redirect_to actor_url(id: @actor.id), notice: t('.success')
     else
-
+      flash.now[:alert] = t('.failure')
+      render :new, status: :unprocessable_entity
     end
   end
 
   def show
     @actor = Actor.find(params[:id])
   end
-
 end
